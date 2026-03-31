@@ -80,15 +80,20 @@ export async function POST(
 
     // Check if like/trash already exists (prevent duplicates)
     if (['like', 'trash'].includes(engagementType)) {
-      const { data: existing } = await supabase
-        .from('property_engagement')
-        .select('id')
-        .eq('property_id', params.propertyId)
-        .eq('user_id', userId)
-        .eq('user_type', userType)
-        .eq('engagement_type', engagementType)
-        .single()
-        .catch(() => ({ data: null }));
+      let existing: any = null;
+      try {
+        const result = await supabase
+          .from('property_engagement')
+          .select('id')
+          .eq('property_id', params.propertyId)
+          .eq('user_id', userId)
+          .eq('user_type', userType)
+          .eq('engagement_type', engagementType)
+          .single();
+        existing = result.data;
+      } catch {
+        existing = null;
+      }
 
       if (existing) {
         // Delete if already exists (toggle off)

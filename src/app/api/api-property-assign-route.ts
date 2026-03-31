@@ -15,7 +15,7 @@ export async function POST(
   { params }: { params: { propertyId: string } }
 ) {
   try {
-    const body = await request.json();
+    const body = await _request.json();
     const { buyer_ids } = body;
 
     if (!buyer_ids || !Array.isArray(buyer_ids) || buyer_ids.length === 0) {
@@ -83,7 +83,7 @@ export async function DELETE(
   { params }: { params: { propertyId: string } }
 ) {
   try {
-    const body = await request.json();
+    const body = await _request.json();
     const { buyer_id } = body;
 
     if (!buyer_id) {

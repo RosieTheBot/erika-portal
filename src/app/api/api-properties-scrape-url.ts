@@ -9,7 +9,7 @@ import { webScraper } from '@/lib/web-scraper-puppeteer';
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
+    const body = await _request.json();
     const { url, propertyType = 'residential' } = body;
 
     if (!url) {

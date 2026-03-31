@@ -17,7 +17,7 @@ const supabase = createClient(
 // GET /api/properties
 export async function GET(request: Request) {
   try {
-    const url = new URL(request.url);
+    const url = new URL(_request.url);
     const limit = parseInt(url.searchParams.get('limit') || '50');
     const offset = parseInt(url.searchParams.get('offset') || '0');
     const status = url.searchParams.get('status');
@@ -85,7 +85,7 @@ export async function GET(request: Request) {
 // POST /api/properties
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
+    const body = await _request.json();
     const {
       address,
       city,
@@ -145,7 +145,7 @@ export async function POST(request: Request) {
 // PATCH /api/properties
 export async function PATCH(request: Request) {
   try {
-    const body = await request.json();
+    const body = await _request.json();
     const { id, ...updates } = body;
 
     if (!id) {
@@ -180,7 +180,7 @@ export async function PATCH(request: Request) {
 // DELETE /api/properties
 export async function DELETE(request: Request) {
   try {
-    const body = await request.json();
+    const body = await _request.json();
     const { id } = body;
 
     if (!id) {

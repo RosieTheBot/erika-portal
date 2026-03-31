@@ -16,7 +16,7 @@ export async function GET(
   { params }: { params: { templateId: string } }
 ) {
   try {
-    const url = new URL(request.url);
+    const url = new URL(_request.url);
     const contractDateStr = url.searchParams.get('contractDate');
     const closingDateStr = url.searchParams.get('closingDate');
 

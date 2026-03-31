@@ -54,7 +54,7 @@ export async function POST(
   { params }: { params: { propertyId: string } }
 ) {
   try {
-    const body = await request.json();
+    const body = await _request.json();
     const { userId, userType, engagementType, commentText } = body;
 
     if (!userId || !userType || !engagementType) {

@@ -9,7 +9,7 @@ import { mlsGridAPI } from '@/lib/mls-grid';
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
+    const body = await _request.json();
     const { mlsNumber, propertyType = 'residential' } = body;
 
     if (!mlsNumber) {

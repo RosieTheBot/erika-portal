@@ -5,7 +5,7 @@
  */
 
 import { createClient } from '@supabase/supabase-js';
-import { webScraper } from '@/lib/web-scraper-puppeteer';
+import { webScraper } from '@/lib/web-scraper';
 
 export async function POST(request: Request) {
   try {

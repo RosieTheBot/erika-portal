@@ -5,7 +5,7 @@
  */
 
 import { createClient } from '@supabase/supabase-js';
-import { mlsGridAPI } from '@/lib/mls-grid';
+import { mlsGridAPI } from '@/lib/mls-grid-wrapper';
 
 export async function POST(request: Request) {
   try {

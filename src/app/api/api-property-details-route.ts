@@ -11,7 +11,7 @@ const supabase = createClient(
 );
 
 export async function GET(
-  request: Request,
+  _request: Request,
   { params }: { params: { propertyId: string } }
 ) {
   try {

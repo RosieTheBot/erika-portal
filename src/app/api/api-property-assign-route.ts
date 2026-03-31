@@ -11,7 +11,7 @@ const supabase = createClient(
 );
 
 export async function POST(
-  request: Request,
+  _request: Request,
   { params }: { params: { propertyId: string } }
 ) {
   try {
@@ -54,7 +54,7 @@ export async function POST(
 
 // GET assigned buyers
 export async function GET(
-  request: Request,
+  _request: Request,
   { params }: { params: { propertyId: string } }
 ) {
   try {
@@ -79,7 +79,7 @@ export async function GET(
 
 // DELETE assignment
 export async function DELETE(
-  request: Request,
+  _request: Request,
   { params }: { params: { propertyId: string } }
 ) {
   try {

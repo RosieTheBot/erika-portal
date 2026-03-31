@@ -14,7 +14,7 @@ const supabase = createClient(
 
 // GET /api/properties/[propertyId]/engagement
 export async function GET(
-  request: Request,
+  __request: Request,
   { params }: { params: { propertyId: string } }
 ) {
   try {
@@ -50,7 +50,7 @@ export async function GET(
 
 // POST /api/properties/[propertyId]/engagement
 export async function POST(
-  request: Request,
+  _request: Request,
   { params }: { params: { propertyId: string } }
 ) {
   try {
@@ -137,7 +137,7 @@ export async function POST(
 
 // DELETE /api/properties/[propertyId]/engagement/[engagementId]
 export async function DELETE(
-  request: Request,
+  _request: Request,
   { params }: { params: { propertyId: string; engagementId: string } }
 ) {
   try {

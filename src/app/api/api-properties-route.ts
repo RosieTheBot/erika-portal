@@ -15,7 +15,7 @@ const supabase = createClient(
 );
 
 // GET /api/properties
-export async function GET(request: Request) {
+export async function GET(_request: Request) {
   try {
     const url = new URL(_request.url);
     const limit = parseInt(url.searchParams.get('limit') || '50');
@@ -83,7 +83,7 @@ export async function GET(request: Request) {
 }
 
 // POST /api/properties
-export async function POST(request: Request) {
+export async function POST(_request: Request) {
   try {
     const body = await _request.json();
     const {
@@ -143,7 +143,7 @@ export async function POST(request: Request) {
 }
 
 // PATCH /api/properties
-export async function PATCH(request: Request) {
+export async function PATCH(_request: Request) {
   try {
     const body = await _request.json();
     const { id, ...updates } = body;
@@ -178,7 +178,7 @@ export async function PATCH(request: Request) {
 }
 
 // DELETE /api/properties
-export async function DELETE(request: Request) {
+export async function DELETE(_request: Request) {
   try {
     const body = await _request.json();
     const { id } = body;

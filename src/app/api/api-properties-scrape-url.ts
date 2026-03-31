@@ -7,7 +7,7 @@
 import { createClient } from '@supabase/supabase-js';
 import { webScraper } from '@/lib/web-scraper';
 
-export async function POST(request: Request) {
+export async function POST(_request: Request) {
   try {
     const body = await _request.json();
     const { url, propertyType = 'residential' } = body;

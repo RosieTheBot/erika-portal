@@ -7,7 +7,7 @@
 import { createClient } from '@supabase/supabase-js';
 import { mlsGridAPI } from '@/lib/mls-grid-wrapper';
 
-export async function POST(request: Request) {
+export async function POST(_request: Request) {
   try {
     const body = await _request.json();
     const { mlsNumber, propertyType = 'residential' } = body;
